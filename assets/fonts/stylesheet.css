@@ -1,0 +1,33 @@
+@font-face {
+    font-family: 'Graphie';
+    src: url('Graphie-Bold.woff2') format('woff2'),
+        url('Graphie-Bold.woff') format('woff'),
+        url('Graphie-Bold.ttf') format('truetype'),
+        url('Graphie-Bold.svg#Graphie-Bold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Graphie';
+    src: url('Graphie-Light.woff2') format('woff2'),
+        url('Graphie-Light.woff') format('woff'),
+        url('Graphie-Light.ttf') format('truetype'),
+        url('Graphie-Light.svg#Graphie-Light') format('svg');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Graphie';
+    src: url('Graphie-Regular.woff2') format('woff2'),
+        url('Graphie-Regular.woff') format('woff'),
+        url('Graphie-Regular.ttf') format('truetype'),
+        url('Graphie-Regular.svg#Graphie-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+

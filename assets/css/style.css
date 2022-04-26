@@ -1,0 +1,578 @@
+:root {
+  --color-cinza-claro: rgba(170, 170, 170);
+  --color-cinza-escuro: rgba(48, 48, 48);
+  --color-green: rgba(46, 204, 113);
+  --color-blue: rgba(9, 132, 227);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  // align-items: center;
+  font-family: sans-serif;
+  background: linear-gradient(rgba(242, 242, 242, .9), rgba(9, 132, 227, .9));
+  background-size: cover;
+  
+}
+
+.root {
+  // height: 100vh;
+  min-height: 100vh;
+  // display: flex;
+  // justify-content: center;
+  font-size: 14px;
+  position: relative;
+}
+
+ul, li {
+  list-style: none;
+}
+
+a {
+  color: var(--color-green);
+  font-weight: bold;
+  text-decoration: none;
+}
+
+p {
+  color: var(--color-cinza-claro);
+}
+
+img {
+  width: 100%;
+}
+
+.mt-3 {
+  margin-top: 3rem;
+}
+
+.mb-3 {
+  margin-bottom: 3rem;
+}
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
+#formulario {
+  margin: 50px auto;
+}
+
+#formulario #progress {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  -moz-justify-content: center;
+  -webkit-justify-content: center;
+  margin-bottom: 30px;
+  overflow: hidden;
+  counter-reset: step;
+}
+
+#formulario #progress li {
+  list-style-type: none;
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 10px;
+  float: left;
+  width: 33.33%;
+  position: relative;
+}
+
+#formulario #progress li:before {
+  content: counter(step);
+  counter-increment: step;
+  width: 40px;
+  display: block;
+  line-height: 40px;
+  background: var(--color-cinza-claro);
+  color: white;
+  border-radius: 50%;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  margin: 0 auto 10px auto;
+}
+
+#formulario #progress li:after {
+  content: '';
+  width: 100%;
+  height: 1px;
+  background: var(--color-cinza-claro);
+  position: absolute;
+  top: 21px;
+  left: -50%;
+  transform: translateY(-50%);
+  z-index: -1;
+}
+
+#formulario #progress li:first-child:after {
+  content: none;
+}
+
+#formulario #progress li.active:before, #formulario #progress li.active:after {
+  background: var(--color-green);
+  text-shadow: 0 1px 0;
+}
+
+.box-container,
+.form {
+  background-color: #FFF;
+  border-radius: 20px;
+  box-sizing: border-box;
+  padding: 40px 60px;
+  width: 100%;
+  box-shadow: 2px 2px 20px var(--color-cinza-escuro);
+}
+
+.form {
+  overflow: hidden;
+  //position: absolute;
+}
+
+.form:not(:first-of-type){
+  display: none;
+}
+
+.title {
+  color: var(--color-cinza-escuro);
+  font-size: 40px;
+  font-weight: 600;
+  margin-top: 30px;
+}
+
+.subtitle {
+  color: var(--color-cinza-escuro);
+  font-size: 30px;
+  font-weight: 600;
+  margin-top: 10px;
+}
+
+/* INPUTS FORMAT */
+@supports (-webkit-appearance: none) or (-moz-appearance: none) {
+  .input-container {
+    height: 50px;
+    position: relative;
+    width: 100%;
+    margin-top: 30px;
+  }
+
+  .input {
+    background-color: transparent;
+    border-radius: 12px;
+    border: 1px solid var(--color-cinza-claro);
+    box-sizing: border-box;
+    color: var(--color-cinza-escuro);
+    font-size: 18px;
+    height: 100%;
+    outline: 0;
+    padding: 4px 20px 0 40px;
+    width: 100%;
+  }
+
+  .input:focus ~ .cut,
+  .input:not(:placeholder-shown) ~ .cut {
+    transform: translateY(8px);
+  }
+
+  .placeholder {
+    color: var(--color-cinza-claro);
+    font-family: sans-serif;
+    line-height: 14px;
+    pointer-events: none;
+    position: absolute;
+    transform-origin: 0 50%;
+    transition: transform 200ms, color 200ms;
+    left: 40px;
+    top: 20px;
+  }
+
+  .input:focus ~ .placeholder,
+  .input:not(:placeholder-shown) ~ .placeholder {
+    transform: translateY(-30px) translateX(10px) scale(0.75);
+    background-color: #fff;
+    padding: 2px 4px;
+    border-radius: 10px;
+  }
+
+  .input:not(:placeholder-shown) ~ .placeholder {
+    color: var(--color-cinza-claro);
+  }
+
+  .input:focus ~ .placeholder {
+    color: var(--color-cinza-claro);
+  }
+
+  .input-radio li {
+    margin: 16px 0;
+    position: relative;
+  }
+
+  .input-radio li label {
+    color: var(--color-cinza-claro);
+  }
+
+  input[type=checkbox],
+  input[type=radio] {
+    --active: var(--color-green);
+    --active-inner: #fff;
+    --focus: 2px rgba(39, 94, 254, .3);
+    --border: #BBC1E1;
+    --border-hover: var(--color-cinza-claro);
+    --background: #fff;
+    --disabled: var(--color-cinza-claro);
+    --disabled-inner: var(--color-cinza-claro);
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    height: 21px;
+    outline: none;
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+    cursor: pointer;
+    border: 1px solid var(--bc, var(--border));
+    background: var(--b, var(--background));
+    transition: background 0.3s, border-color 0.3s, box-shadow 0.2s;
+  }
+  input[type=checkbox]:after,
+  input[type=radio]:after {
+    content: "";
+    display: block;
+    left: 0;
+    top: 0;
+    position: absolute;
+    transition: transform var(--d-t, 0.3s) var(--d-t-e, ease), opacity var(--d-o, 0.2s);
+  }
+  input[type=checkbox]:checked,
+  input[type=radio]:checked {
+    --b: var(--active);
+    --bc: var(--active);
+    --d-o: .3s;
+    --d-t: .6s;
+    --d-t-e: cubic-bezier(.2, .85, .32, 1.2);
+  }
+  input[type=checkbox]:disabled,
+  input[type=radio]:disabled {
+    --b: var(--disabled);
+    cursor: not-allowed;
+    opacity: 0.9;
+  }
+  input[type=checkbox]:disabled:checked,
+  input[type=radio]:disabled:checked {
+    --b: var(--disabled-inner);
+    --bc: var(--border);
+  }
+  input[type=checkbox]:disabled + label,
+  input[type=radio]:disabled + label {
+    cursor: not-allowed;
+  }
+  input[type=checkbox]:hover:not(:checked):not(:disabled),
+  input[type=radio]:hover:not(:checked):not(:disabled) {
+    --bc: var(--border-hover);
+  }
+  input[type=checkbox]:focus,
+  input[type=radio]:focus {
+    box-shadow: 0 0 0 var(--focus);
+  }
+  input[type=checkbox]:not(.switch),
+  input[type=radio]:not(.switch) {
+    width: 21px;
+  }
+  input[type=checkbox]:not(.switch):after,
+  input[type=radio]:not(.switch):after {
+    opacity: var(--o, 0);
+  }
+  input[type=checkbox]:not(.switch):checked,
+  input[type=radio]:not(.switch):checked {
+    --o: 1;
+  }
+  input[type=checkbox] + label,
+  input[type=radio] + label {
+    line-height: 21px;
+    display: inline-block;
+    vertical-align: top;
+    cursor: pointer;
+    margin-left: 4px;
+  }
+  input[type=checkbox]:not(.switch) {
+    border-radius: 7px;
+  }
+  input[type=checkbox]:not(.switch):after {
+    width: 5px;
+    height: 9px;
+    border: 2px solid var(--active-inner);
+    border-top: 0;
+    border-left: 0;
+    left: 7px;
+    top: 4px;
+    transform: rotate(var(--r, 20deg));
+  }
+  input[type=checkbox]:not(.switch):checked {
+    --r: 43deg;
+  }
+  input[type=checkbox].switch {
+    width: 38px;
+    border-radius: 11px;
+  }
+  input[type=checkbox].switch:after {
+    left: 2px;
+    top: 2px;
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    background: var(--ab, var(--border));
+    transform: translateX(var(--x, 0));
+  }
+  input[type=checkbox].switch:checked {
+    --ab: var(--active-inner);
+    --x: 17px;
+  }
+  input[type=checkbox].switch:disabled:not(:checked):after {
+    opacity: 0.6;
+  }
+  input[type=radio] {
+    border-radius: 50%;
+  }
+  input[type=radio]:after {
+    width: 19px;
+    height: 19px;
+    border-radius: 50%;
+    background: var(--active-inner);
+    opacity: 0;
+    transform: scale(var(--s, 0.7));
+  }
+  input[type=radio]:checked {
+    --s: .5;
+  }
+}
+
+.button {
+  background-color: var(--color-green);
+  border-radius: 50px;
+  border: 0;
+  box-sizing: border-box;
+  color: #eee;
+  cursor: pointer;
+  font-size: 18px;
+  height: 50px;
+  margin-top: 38px;
+  padding: 10px 20px;
+  outline: 0;
+  text-align: center;
+  min-width: 200px;
+}
+
+.button:hover {
+  background-color: var(--color-blue);
+}
+
+.button-reverse {
+  background-color: var(--color-blue);
+}
+
+.button-reverse:hover {
+  background-color: var(--color-green);
+}
+
+.prev.button {
+  min-width: auto;
+  padding: 10px 0;
+  background-color: transparent;
+  color: var(--color-green);
+}
+
+.prev.button:hover {
+  background-color: transparent;
+  color: var(--color-cinza-escuro);
+}
+
+.input-container .fas {
+  color: var(--color-cinza-claro);
+  pointer-events: none;
+  position: absolute;
+  left: 20px;
+  top: 20px;
+}
+
+
+/* Cards Step-3
+ */
+
+.car-item {
+  border-radius: 20px;
+  border: 1px solid var(--color-green);
+  box-sizing: border-box;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.car-item h2.title {
+  margin: 0;
+  margin-bottom: 30px;
+}
+
+.car-item h3.subtitle {
+  font-size: 26px;
+  margin: 15px 0;
+  color: var(--color-green);
+  border-bottom: 1px solid var(--color-cinza-claro);
+}
+
+.car-item h3.subtitle span {
+  font-size: 14px;
+}
+
+.radio input[type=radio] {
+  position: absolute;
+  visibility: hidden;
+  display: none;
+}
+
+.radio label {
+  color: #9a929e;
+  display: inline-block;
+  cursor: pointer;
+  font-weight: bold;
+  padding: 5px 20px;
+  border: solid 1px var(--color-cinza-claro);
+  border-radius: 50px;
+}
+
+.radio input[type=radio]:hover + label,
+.radio input[type=radio]:checked + label {
+  color: #ccc8ce;
+  border: solid 1px var(--color-cinza-escuro);
+  background: var(--color-cinza-escuro);
+}
+
+.radio label + input[type=radio] + label {
+  border-left: solid 3px var(--color-cinza-escuro);
+}
+
+.radio {
+  margin-top: 20px;
+}
+
+
+/* Tela Dados Plano Veículo
+ */
+.dados-plano-veiculo .box-container {
+  text-align: center;
+  padding: 40px;
+}
+
+.dados-plano-veiculo .box-container div {
+  margin-bottom: 20px;
+}
+
+.dados-plano-veiculo .box-container h2 {
+  font-size: 40px;
+}
+
+.dados-plano-veiculo .box-container h3 {
+  font-size: 30px;
+}
+
+.dados-plano-veiculo .box-container button {
+  margin: 0;
+  margin-bottom: 20px;
+}
+
+.dados-plano-veiculo .box-container hr {
+  margin-bottom: 20px;
+  color: var(--color-cinza-claro);
+  background-color: var(---color-cinza-claro);
+}
+
+.dados-plano-veiculo .plan .input-radio .fas {
+  color: var(--color-green);
+}
+
+.sdados-plano-veiculo .optional-services {
+  margin-top: 3rem;
+}
+
+.dados-plano-veiculo .input-radio {
+  margin-top: 2rem;
+}
+
+.dados-plano-veiculo .input-radio li {
+  border-bottom: 1px solid var(--color-cinza-claro);
+  padding-bottom: 4px;
+}
+
+.dados-plano-veiculo .optional-services .input-radio li label {
+  width: 92%;
+}
+
+.dados-plano-veiculo .optional-services .input-radio li label span {
+  float: right;
+}
+
+
+/* Tela Dados Pagamento
+ */
+
+.dados-pagamento .total-pagar {
+  margin-top: 30px;
+}
+
+.dados-pagamento .box-container > div {
+  border-bottom: 1px solid var(--color-cinza-claro);
+  padding: 10px 0;
+}
+
+.dados-pagamento .box-container > div:nth-child(2),
+.dados-pagamento .box-container > div:nth-child(3) {
+  padding: 20px 0;
+}
+
+.dados-pagamento .box-container > div:last-child {
+  border: none;
+}
+
+.dados-pagamento .box-container .safety {
+  color: var(--color-cinza-claro);
+}
+
+.dados-pagamento .box-container .value {
+  display: flex;
+}
+
+.dados-pagamento .box-container .value p {
+  flex: 60%
+}
+
+.dados-pagamento .box-container .value span {
+  flex: 40%;
+  font-weight: bold;
+  text-align: right;
+  color: var(--color-green);
+}
+
+/* Card Pagamento */
+
+.card-container .input {
+  padding-left: 20px;
+}
+
+.step-assinatura h2.title {
+  margin-bottom: 30px;
+}
+
+@media (max-width: 767px) {
+  .box-container, .form {
+    padding: 20px;
+  }
+
+  .car-item {
+    margin-bottom: 15px;
+  }
+}
