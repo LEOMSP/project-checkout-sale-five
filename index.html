@@ -26,6 +26,10 @@
 </head>
 <body>
 
+	<!--*Nome, *Telefone principal, telefone recado, Natureza, CPF, Data de nascimento, Sexo, RG, RG expedidor, cnh, cnh vencimento, estado civil, profissao, e-mail, e-mail alternativo, *origem lead
+
+	*Nome, *telefone principal, telefone recado, natureza, cnpj, em atividade desde, area de atuacao, e-mail, e-mail alternativo, *origem lead* -->
+
 	<div class="root">	
 
 		<form id="formulario" method="get" action=".">
@@ -59,7 +63,7 @@
 								</div>
 								<div class="col-12 col-md-6">
 									<div class="input-container">
-										<input id="cpf" class="input" type="text" placeholder=" " />
+										<input id="cpf" class="input cpf" type="text" placeholder=" " />
 										<label for="cpf" class="placeholder">CPF*</label>
 										<i class="fas fa-regular fa-address-card"></i>
 									</div>
@@ -73,8 +77,8 @@
 								</div>
 								<div class="col-12 col-md-6">
 									<div class="input-container">
-										<input id="tel" class="input" type="tel" placeholder=" " />
-										<label for="tel" class="placeholder">Celular*</label>
+										<input id="tel" class="input phone_with_ddd" type="tel" placeholder=" " />
+										<label for="tel" class="placeholder">Telefone principal*</label>
 										<i class="fas fa-solid fa-mobile"></i>
 									</div>
 								</div>
@@ -102,17 +106,10 @@
 							<div class="row mb-3">
 								<div class="col-12 col-md-6">
 									<div class="input-container">
-										<input list="list-value-plano" id="valor-plano" class="input" type="text" placeholder=" " />
+										<input id="valor-plano" class="input" type="text" placeholder=" " />
 										<label for="valor-plano" class="placeholder">Valor do plano*</label>
 										<i class="fas fa-solid fa-car-battery"></i>
 									</div>
-									<datalist id="list-value-plano">
-										<option value="R$10.000,00">
-										<option value="R$20.000,00">
-										<option value="R$30.000,00">
-										<option value="R$40.000,00">
-										<option value="R$50.000,00">
-									</datalist>
 								</div>
 								<!--<div class="col-12 col-md-6">
 									<div class="input-container">
@@ -130,7 +127,7 @@
 								</div>-->
 								<div class="col-12 col-md-6">
 									<div class="input-container">
-										<input id="date-cirurgia" class="input" type="text" placeholder=" " />
+										<input id="date-cirurgia" class="input date" type="text" placeholder=" " />
 										<label for="date-cirurgia" class="placeholder">Data da cirurgia*</label>
 										<i class="fas fa-solid fa-calendar"></i>
 									</div>
@@ -195,7 +192,7 @@
 							<h2 class="title">Confirmação dos dados pessoais.</h2>
 
 							<div class="row">
-								<div class="col-12 col-md-6">
+								<div class="col-12 col-md-12">
 									<div class="input-container">
 										<input id="fullname" class="input" type="text" placeholder=" " />
 										<label for="fullname" class="placeholder">Nome completo*</label>
@@ -204,29 +201,128 @@
 								</div>
 								<div class="col-12 col-md-6">
 									<div class="input-container">
-										<input id="cpf" class="input" type="text" placeholder=" " />
-										<label for="cpf" class="placeholder">CPF*</label>
+										<input id="tel" class="input phone_with_ddd" type="tel" placeholder=" " />
+										<label for="tel" class="placeholder">Telefone principal*</label>
+										<i class="fas fa-solid fa-mobile"></i>
+									</div>
+								</div>
+								<div class="col-12 col-md-6">
+									<div class="input-container">
+										<input id="tel" class="input phone_with_ddd" type="tel" placeholder=" " />
+										<label for="tel" class="placeholder">Telefone recado</label>
+										<i class="fas fa-solid fa-mobile"></i>
+									</div>
+								</div>
+								<div class="col-12 col-md-6">
+									<div class="input-container">
+										<input list="list-natureza" id="tel" class="input" type="tel" placeholder=" " />
+										<label for="tel" class="placeholder">Natureza</label>
+										<i class="fas fa-solid fa-mobile"></i>
+									</div>
+									<datalist id="list-natureza">
+										<option value="Pessoa fisica">
+										<option value="Pessoa juridica">
+									</datalist>
+								</div>
+								<div class="col-12 col-md-6">
+									<div class="input-container">
+										<input id="cpf" class="input cpf" type="text" placeholder=" " />
+										<label for="cpf" class="placeholder">CPF</label>
+										<i class="fas fa-regular fa-address-card"></i>
+									</div>
+								</div>
+								<div class="col-12 col-md-3">
+									<div class="input-container">
+										<input id="tel" class="input date" type="tel" placeholder=" " data-mask="00/00/0000" />
+										<label for="tel" class="placeholder">Data de nascimento</label>
+										<i class="fas fa-solid fa-mobile"></i>
+									</div>
+								</div>
+								<div class="col-12 col-md-3">
+									<div class="input-container">
+										<input list="list-sexo" id="tel" class="input" type="tel" placeholder=" " />
+										<label for="tel" class="placeholder">Sexo</label>
+										<i class="fas fa-solid fa-mobile"></i>
+									</div>
+									<datalist id="list-sexo">
+										<option value="Masculino">
+										<option value="Feminino">
+									</datalist>
+								</div>
+								<div class="col-12 col-md-3">
+									<div class="input-container">
+										<input id="tel" class="input" type="tel" placeholder=" " />
+										<label for="tel" class="placeholder">RG</label>
+										<i class="fas fa-regular fa-address-card"></i>
+									</div>
+								</div>
+								<div class="col-12 col-md-3">
+									<div class="input-container">
+										<input id="tel" class="input" type="tel" placeholder=" " />
+										<label for="tel" class="placeholder">RG expedidor</label>
 										<i class="fas fa-regular fa-address-card"></i>
 									</div>
 								</div>
 								<div class="col-12 col-md-6">
+									<div class="input-container">
+										<input id="tel" class="input" type="tel" placeholder=" " />
+										<label for="tel" class="placeholder">CNH</label>
+										<i class="fas fa-regular fa-address-card"></i>
+									</div>
+								</div>
+								<div class="col-12 col-md-6">
+									<div class="input-container">
+										<input id="tel" class="input" type="tel" placeholder=" " />
+										<label for="tel" class="placeholder">CNH vencimento</label>
+										<i class="fas fa-regular fa-address-card"></i>
+									</div>
+								</div>
+								<div class="col-12 col-md-6">
+									<div class="input-container">
+										<input list="list-estado-civil" id="tel" class="input" type="tel" placeholder=" " />
+										<label for="tel" class="placeholder">Estado civil</label>
+										<i class="fas fa-solid fa-mobile"></i>
+									</div>
+									<datalist id="list-estado-civil">
+										<option value="Solteiro">
+										<option value="Casado">
+									</datalist>
+								</div>
+								<div class="col-12 col-md-6">
+									<div class="input-container">
+										<input id="tel" class="input" type="tel" placeholder=" " />
+										<label for="tel" class="placeholder">Profissao</label>
+										<i class="fas fa-solid fa-mobile"></i>
+									</div>
+								</div>
+								<div class="col-12 col-md-4">
 									<div class="input-container">
 										<input id="email" class="input" type="email" placeholder=" " />
 										<label for="email" class="placeholder">E-mail*</label>
 										<i class="fas fa-solid fa-envelope"></i>
 									</div>
 								</div>
-								<div class="col-12 col-md-6">
+								<div class="col-12 col-md-4">
 									<div class="input-container">
-										<input id="tel" class="input" type="tel" placeholder=" " />
-										<label for="tel" class="placeholder">Celular*</label>
-										<i class="fas fa-solid fa-mobile"></i>
+										<input id="email-alternativo" class="input" type="email" placeholder=" " />
+										<label for="email-alternativo" class="placeholder">E-mail alternativo*</label>
+										<i class="fas fa-solid fa-envelope"></i>
 									</div>
 								</div>
+								<!--<div class="col-12 col-md-4">
+									<div class="input-container">
+										<input list="list-origem-lead" id="tel" class="input" type="tel" placeholder=" " />
+										<label for="tel" class="placeholder">Origem lead*</label>
+										<i class="fas fa-solid fa-mobile"></i>
+									</div>
+									<datalist id="list-origem-lead">
+										<option value="Edge">
+									</datalist>
+								</div>-->
 								<div class="col-12 col-md-6">
 									<div class="input-container">
 										<!--<input id="cep" class="input cep" type="cep" placeholder=" " />-->
-										<input name="cep" type="text" id="cep" class="input" value="" size="10" maxlength="9" onblur="pesquisacep(this.value);" placeholder=" " />
+										<input name="cep" type="text" id="cep" class="input cep" value="" size="10" maxlength="9" onblur="pesquisacep(this.value);" placeholder=" " />
 										<label for="cep" class="placeholder">CEP*</label>
 										<i class="fas fa-solid fa-map-location"></i>
 									</div>
@@ -253,7 +349,7 @@
 										<i class="fas fa-solid fa-location-pin"></i>
 									</div>
 								</div>
-								<div class="col-12 col-md-6">
+								<div class="col-12 col-md-4">
 									<div class="input-container">
 										<!--<input id="tel" class="input" type="tel" placeholder=" " />-->
 										<input name="bairro" type="text" id="bairro" class="input" size="40" placeholder=" " />
@@ -261,19 +357,19 @@
 										<i class="fas fa-solid fa-location-pin"></i>
 									</div>
 								</div>
-								<div class="col-12 col-md-6">
-									<div class="input-container">
-										<!--<input id="tel" class="input" type="tel" placeholder=" " />-->
-										<input name="uf" type="text" id="uf" class="input" size="2" placeholder=" " />
-										<label for="tel" class="placeholder">UF*</label>
-										<i class="fas fa-solid fa-location-pin"></i>
-									</div>
-								</div>
-								<div class="col-12 col-md-6">
+								<div class="col-12 col-md-4">
 									<div class="input-container">
 										<!--<input id="tel" class="input" type="tel" placeholder=" " />-->
 										<input name="cidade" type="text" id="cidade" class="input" size="40" placeholder=" " />
 										<label for="tel" class="placeholder">Cidade*</label>
+										<i class="fas fa-solid fa-location-pin"></i>
+									</div>
+								</div>
+								<div class="col-12 col-md-4">
+									<div class="input-container">
+										<!--<input id="tel" class="input" type="tel" placeholder=" " />-->
+										<input name="uf" type="text" id="uf" class="input" size="2" placeholder=" " />
+										<label for="tel" class="placeholder">UF*</label>
 										<i class="fas fa-solid fa-location-pin"></i>
 									</div>
 								</div>
@@ -381,6 +477,7 @@
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 	<script src="assets/js/bootstrap.min.js" type="text/javascript"></script>
 	<script src="assets/js/card.js"></script>
+    <script src="assets/js/jquery.mask.min.js"></script>
 	<script src="assets/js/scripts.js" type="text/javascript"></script>
     <script>
         var c = new Card({
